@@ -1,6 +1,4 @@
-CHPL = chpl
-
-CHPL_FLAGS = --fast
+CHPL = docker run --rm -v $(PWD):/usr/src/myapp -w /usr/src/myapp chapel/chapel chpl
 
 TARGETS = \
 	hello \
@@ -13,4 +11,4 @@ clean:
 	rm -f $(TARGETS) 
 
 hello: hello.chpl
-	+$(CHPL) -o $@ $(CHPL_FLAGS) $<
+	+$(CHPL) -o $@ $<
