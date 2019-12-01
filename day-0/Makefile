@@ -1,4 +1,9 @@
-CHPL = docker run --rm -v $(PWD):/usr/src/myapp -w /usr/src/myapp chapel/chapel chpl
+CONTAINER := docker run --rm -v $(PWD):/usr/src/myapp -w /usr/src/myapp chapel/chapel
+CHPL = $(CONTAINER) chpl
+
+ifneq (, $(shell which chpl))
+CHPL := chpl
+endif
 
 TARGETS = \
 	hello \
