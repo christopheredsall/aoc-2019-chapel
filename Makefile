@@ -3,7 +3,7 @@ MAKEFLAGS = --no-print-directory
 
 CHPL = chpl
 
-default: day-0 day-1
+default: day-0 day-1 day-2
 
 day-0: FORCE
 	cd day-0 && $(MAKE)
