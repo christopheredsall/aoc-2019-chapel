@@ -8,6 +8,7 @@ endif
 TARGETS = \
 	vm \
 	test_vm \
+	brute_force \
 
 default: all 
 
@@ -17,6 +18,9 @@ clean:
 	rm -f $(TARGETS) 
 
 vm: vm.chpl VirtualMachine.chpl
+	+$(CHPL) -o $@ $<
+
+brute_force: brute_force.chpl VirtualMachine.chpl
 	+$(CHPL) -o $@ $<
 
 test_vm: test_vm.chpl VirtualMachine.chpl
