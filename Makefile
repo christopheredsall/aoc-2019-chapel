@@ -11,4 +11,7 @@ day-0: FORCE
 day-1: FORCE
 	cd day-1 && $(MAKE)
 
+day-2: FORCE
+	cd day-2 && $(MAKE)
+
 FORCE:
