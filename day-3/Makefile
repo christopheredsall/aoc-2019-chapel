@@ -18,6 +18,6 @@ clean:
 crossings: crossings.chpl 
 	+$(CHPL) -o $@ $<
 
-test_crossings: test_crossings.chpl
+test_crossings: test_crossings.chpl CrossedWires.chpl
 	+$(CHPL) -o $@ $<
 	./$@
